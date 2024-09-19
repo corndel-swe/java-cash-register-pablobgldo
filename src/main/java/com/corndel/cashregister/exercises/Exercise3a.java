@@ -11,11 +11,7 @@ public class Exercise3a {
    * Return null if there are no recipes.
    */
   public static Recipe lastRecipe(RecipeBook recipeBook) {
-
-    if (recipeBook.recipes.size() == 0) {
-      return null;
-    }
-
-    return recipeBook.recipes.getLast();
+    // TODO
+    return null;
   }
 }
