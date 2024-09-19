@@ -9,6 +9,7 @@ public class Exercise2b {
    * name of each recipe
    */
   public static List<String> listNames(List<Recipe> recipes) {
-    return recipes.stream().map(recipe -> recipe.name).toList();
+    // TODO
+    return null;
   }
 }
