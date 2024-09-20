@@ -11,10 +11,12 @@ public class Exercise3b {
    * in the book
    */
   public static int countServings(RecipeBook recipeBook) {
-    int total = 0;
-    for (Recipe x: recipeBook.recipes) {
-        total+= x.servings;
-    };
-    return total;
+    //    int total = 0;
+    //    for (Recipe x: recipeBook.recipes) {
+    //        total+= x.servings;
+    //    };
+    //    return total;
+
+    return recipeBook.recipes.stream().map(recipe -> recipe.servings).reduce(0, Integer::sum);
   }
 }
