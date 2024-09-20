@@ -1,6 +1,9 @@
 package com.corndel.cashregister.exercises;
 
+import com.corndel.cashregister.exercises.models.Recipe;
 import com.corndel.cashregister.exercises.models.RecipeBook;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Exercise3b {
   /**
@@ -8,7 +11,10 @@ public class Exercise3b {
    * in the book
    */
   public static int countServings(RecipeBook recipeBook) {
-    // TODO
-    return 0;
+    int total = 0;
+    for (Recipe x: recipeBook.recipes) {
+        total+= x.servings;
+    };
+    return total;
   }
 }
