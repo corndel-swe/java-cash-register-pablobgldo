@@ -17,7 +17,6 @@ public class Exercise1a {
    * both work, and which you use is up to your preference.
    */
   public static String getSummary(Recipe recipe) {
-    // TODO
-    return null;
+    return recipe.name + " has " + recipe.ingredients.size() + " ingredients and serves " + recipe.servings + " people";
   }
 }

@@ -14,15 +14,13 @@ public class Level2 {
    * N.b. $1 is a note, not a coin
    */
   public static int countCoins(List<Item> drawer) {
-    // TODO
-    return 0;
+    return drawer.stream().filter(x -> drawer.indexOf(x) > 4).map(x->x.quantity).reduce(0, Integer::sum);
   }
 
   /**
    * Same as count coins but for *notes* instead
    */
   public static int countNotes(List<Item> drawer) {
-    // TODO
-    return 0;
+    return drawer.stream().filter(x -> drawer.indexOf(x) < 5).map(x->x.quantity).reduce(0, Integer::sum);
   }
-}
+  }
