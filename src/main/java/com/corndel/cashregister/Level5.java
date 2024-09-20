@@ -3,7 +3,13 @@ package com.corndel.cashregister;
 import com.corndel.cashregister.models.Item;
 import java.util.List;
 
+import static com.corndel.cashregister.Level1.addItem;
+import static com.corndel.cashregister.Level1.removeItem;
+import static com.corndel.cashregister.Level3.sumDrawer;
+import static com.corndel.cashregister.Level4.canMakeAmount;
+
 public class Level5 {
+
   /**
    * Calculates the amount of change the customer is owed based on the cost and
    * the amount paid. Adds the customer's paid amount to the drawer, removes their
@@ -27,8 +33,28 @@ public class Level5 {
    * Level1.addItem(...) and so on.
    */
   public static List<Item> transaction(int cost, List<Item> paid, List<Item> drawer) {
-    // TODO
+    // Adds paid money intro drawer
+    for (Item item : paid) {
+      for (int i = 0; i < item.quantity; i++) {
+        addItem(item.name, drawer);
+      }
+    }
+    // Calculates change
+    int change = sumDrawer(paid) - cost;
+
+    // Removes change from drawer and returns it
+    for (Item item : drawer) {
+      if (item.quantity == 0) {
+        continue;
+      }
+      while (change >= item.value) {
+        change -= item.value;
+        removeItem(item.name, drawer);
+      }
+      if (change == 0) {
+        return drawer;
+      }
+    }
     return null;
   }
-
 }
