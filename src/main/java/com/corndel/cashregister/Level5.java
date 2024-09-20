@@ -33,7 +33,7 @@ public class Level5 {
    * Level1.addItem(...) and so on.
    */
   public static List<Item> transaction(int cost, List<Item> paid, List<Item> drawer) {
-    // Adds paid money intro drawer
+    // Adds paid money into drawer
     for (Item item : paid) {
       for (int i = 0; i < item.quantity; i++) {
         addItem(item.name, drawer);
